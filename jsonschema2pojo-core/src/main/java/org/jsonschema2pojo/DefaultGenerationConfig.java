@@ -41,6 +41,14 @@ public class DefaultGenerationConfig implements GenerationConfig {
     }
 
     /**
+     * @return <code>false</code>
+     */
+    @Override
+    public boolean isUseEnumSuffix() {
+        return false;
+    }
+
+    /**
      * Unsupported since no default source is possible.
      */
     @Override

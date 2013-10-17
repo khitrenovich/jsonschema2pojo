@@ -48,6 +48,13 @@ public interface GenerationConfig {
     boolean isUsePrimitives();
 
     /**
+     * Gets the 'useEnumSuffix' configuration option.
+     * 
+     * @return whether to use 'Enum' suffix when generating enum names.
+     */
+    boolean isUseEnumSuffix();
+
+    /**
      * Gets the 'source' configuration option.
      * 
      * @return The source file(s) or directory(ies) from which JSON Schema will

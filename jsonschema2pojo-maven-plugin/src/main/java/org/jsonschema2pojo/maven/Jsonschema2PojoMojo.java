@@ -112,6 +112,15 @@ public class Jsonschema2PojoMojo extends AbstractMojo implements GenerationConfi
     private boolean usePrimitives = false;
 
     /**
+     * Whether to use 'Enum' suffix when generating enum names.
+     * 
+     * @parameter expression="${jsonschema2pojo.useEnumSuffix}"
+     *            default-value="false"
+     * @since 0.2.0
+     */
+    private boolean useEnumSuffix = false;
+
+    /**
      * Add the output directory to the project as a source root, so that the
      * generated java types are compiled and included in the project artifact.
      * 
@@ -377,6 +386,11 @@ public class Jsonschema2PojoMojo extends AbstractMojo implements GenerationConfi
     @Override
     public boolean isUsePrimitives() {
         return usePrimitives;
+    }
+
+    @Override
+    public boolean isUseEnumSuffix() {
+        return useEnumSuffix;
     }
 
     @Override

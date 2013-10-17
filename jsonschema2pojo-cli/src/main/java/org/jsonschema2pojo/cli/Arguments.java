@@ -57,6 +57,9 @@ public class Arguments implements GenerationConfig {
     @Parameter(names = { "-P", "--use-primitives" }, description = "Use primitives instead of wrapper types for bean properties")
     private boolean usePrimitives = false;
 
+    @Parameter(names = { "--use-enum-suffix" }, description = "Use 'Enum' suffix for enum class names.")
+    private boolean useEnumSuffix = false;
+
     @Parameter(names = { "-d", "--word-delimiters" }, description = "The characters that should be considered as word delimiters when creating Java Bean property names from JSON property names")
     private String propertyWordDelimiters = "- _";
 
@@ -150,6 +153,11 @@ public class Arguments implements GenerationConfig {
     @Override
     public boolean isUsePrimitives() {
         return usePrimitives;
+    }
+
+    @Override
+    public boolean isUseEnumSuffix() {
+        return useEnumSuffix;
     }
 
     @Override

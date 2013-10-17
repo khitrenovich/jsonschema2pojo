@@ -58,6 +58,8 @@ public class Jsonschema2PojoTask extends Task implements GenerationConfig {
 
     private boolean usePrimitives;
 
+    private boolean useEnumSuffix;
+
     private File source;
 
     private File targetDirectory;
@@ -186,6 +188,18 @@ public class Jsonschema2PojoTask extends Task implements GenerationConfig {
      */
     public void setUsePrimitives(boolean usePrimitives) {
         this.usePrimitives = usePrimitives;
+    }
+
+    /**
+     * Sets the 'useEnumSuffix' property of this class.
+     * 
+     * @param useEnumSuffix
+     *            Whether to use 'Enum' suffix when generating enum classes.
+     *            <p>
+     *            Default: <code>false</code>.
+     */
+    public void setUseEnumSuffix(boolean useEnumSuffix) {
+        this.useEnumSuffix = useEnumSuffix;
     }
 
     /**
@@ -383,6 +397,11 @@ public class Jsonschema2PojoTask extends Task implements GenerationConfig {
     @Override
     public boolean isUsePrimitives() {
         return usePrimitives;
+    }
+
+    @Override
+    public boolean isUseEnumSuffix() {
+        return useEnumSuffix;
     }
 
     @Override

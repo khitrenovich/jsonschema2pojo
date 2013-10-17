@@ -219,6 +219,8 @@ public class EnumRule implements Rule<JClassContainer, JType> {
 
     private String getEnumName(String nodeName) {
         String className = ruleFactory.getNameHelper().replaceIllegalCharacters(capitalize(nodeName));
+        if (ruleFactory.getGenerationConfig().isUseEnumSuffix())
+        	className += "Enum";
         return ruleFactory.getNameHelper().normalizeName(className);
     }
 

@@ -30,6 +30,7 @@ import org.jsonschema2pojo.SourceType
 public class JsonSchemaExtension implements GenerationConfig {
   boolean generateBuilders
   boolean usePrimitives
+  boolean useEnumSuffix
   Iterable<File> sourceFiles
   File targetDirectory
   String targetPackage
@@ -49,6 +50,7 @@ public class JsonSchemaExtension implements GenerationConfig {
     // See DefaultGenerationConfig
     generateBuilders = false
     usePrimitives = false
+    useEnumSuffix = false
     sourceFiles = []
     targetPackage = ''
     propertyWordDelimiters = [] as char[]
@@ -89,6 +91,7 @@ public class JsonSchemaExtension implements GenerationConfig {
   public String toString() {
     """|generateBuilders = ${generateBuilders}
        |usePrimitives = ${usePrimitives}
+       |useEnumSuffix = ${useEnumSuffix}
        |source = ${sourceFiles}
        |targetDirectory = ${targetDirectory}
        |targetPackage = ${targetPackage}
